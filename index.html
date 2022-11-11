@@ -8,7 +8,12 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-        new Audio("Sike Thats The Wrong Number(1).mp3").play();
+        try {
+
+            new Audio("Sike Thats The Wrong Number(1).mp3").play();
+        } catch (e) {
+            document.body.prepend('<audio preload="auto" src="Sike Thats The Wrong Number(1).mp3" autoplay hidden></audio>')
+        }
     </script>
 </head>
 
@@ -19,15 +24,17 @@
 </body>
 
 <script>
-    ScrollReveal().reveal("h1", {
-        delay: 100
-    });
-    ScrollReveal().reveal("h2", {
-        delay: 1300
-    });
-    ScrollReveal().reveal("img", {
-        delay: 3000
-    });
+    window.onload = () => {
+        ScrollReveal().reveal("h1", {
+            delay: 100
+        });
+        ScrollReveal().reveal("h2", {
+            delay: 1300
+        });
+        ScrollReveal().reveal("img", {
+            delay: 3000
+        });
+    }
 </script>
 
 </html>

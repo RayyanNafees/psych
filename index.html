@@ -9,32 +9,35 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
         try {
-
             new Audio("Sike Thats The Wrong Number(1).mp3").play();
         } catch (e) {
-            document.body.prepend('<audio preload="auto" src="Sike Thats The Wrong Number(1).mp3" autoplay hidden></audio>')
+            document.body.prepend(
+                `<audio preload="auto" src="Sike Thats The Wrong Number(1).mp3" autoplay ${
+            !window.orientation && "hidden"
+          }></audio>`
+            );
         }
     </script>
 </head>
 
-<body style="text-align:center; font-family:arial">
-    <h1 style="font-size:10vh">Psych!!</h1>
-    <h2 style="font-size:5vh">That's the wrooooooooong number</h2>
+<body style="text-align: center; font-family: arial">
+    <h1 style="font-size: 10vh">Psych!!</h1>
+    <h2 style="font-size: 5vh">That's the wrooooooooong number</h2>
     <img src="./ooooh.gif" width="100%" />
 </body>
 
 <script>
     window.onload = () => {
         ScrollReveal().reveal("h1", {
-            delay: 100
+            delay: 100,
         });
         ScrollReveal().reveal("h2", {
-            delay: 1300
+            delay: 1300,
         });
         ScrollReveal().reveal("img", {
-            delay: 3000
+            delay: 3000,
         });
-    }
+    };
 </script>
 
 </html>
